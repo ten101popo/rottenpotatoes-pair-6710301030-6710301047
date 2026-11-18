@@ -14,4 +14,9 @@ class MoviegoerTest {
         .isInstanceOf(IllegalArgumentException.class)
         .hasMessageContaining("@");
   }
+  @Test void rejectsBlankName() {
+    assertThatThrownBy(() -> new Moviegoer(" ", "bob@example.com"))
+        .isInstanceOf(IllegalArgumentException.class)
+        .hasMessageContaining("name");
+  }
 }
