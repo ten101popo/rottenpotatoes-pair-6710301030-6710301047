@@ -1,0 +1,33 @@
+Read the intent.md below and write a requirements spec for it as spec.md.
+
+1. List the functional requirements as numbered statements (REQ-1, REQ-2, ...). Each one must be testable.
+2. Write 3 user stories in the Connextra form (As a ..., So that ..., I want ...), each with acceptance criteria.
+3. For the first story, write Gherkin scenarios: one happy path and at least one sad path.
+4. List every assumption you made that is not in the intent, and every area of concern.
+
+Do not write code. Keep to what the intent asks for.
+
+--- intent.md ---
+
+# Intent: find family-appropriate movies quickly
+Author: ten101popo and bankjunjan, for the customer proxy (a parent of an 8-year-old). Status: draft.
+
+## Problem
+A parent choosing a movie for a child has to open the movies one by one to check each rating.
+The list is long, so choosing takes too long and the parent gives up.
+
+## Proposed outcome
+The parent picks one rating and sees only the movies with that rating.
+In the full list the newest movies come first.
+
+## Affected users and systems
+Parents first, then every moviegoer. The movie catalog of Rotten Potatoes (Movie, Rating and
+MovieCatalog from L2). There is no web page yet: the behaviour is checked through the domain classes.
+
+## Constraints
+The ratings are exactly G, PG, PG-13, R and NC-17. No login and no personal data.
+Plain Java this week, no database.
+
+## Open questions
+What should the parent see when no movie has the chosen rating?
+Should several ratings be selectable at once?
